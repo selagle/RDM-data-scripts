@@ -1,0 +1,6 @@
+library(RPostgreSQL)
+drv<-dbDriver("PostgreSQL")
+con<-dbConnect(drv, dbname="rdm", host="localhost", user="postgres", password="postgres")
+dbListTables(con)
+myTable<-dbGetQuery(con, "SELECT rdmdata.squid, rdmdata.element_mammal, rdmdata.bone_side, rdmdata.foramen FROM rdmdata;")
+View(myTable)
