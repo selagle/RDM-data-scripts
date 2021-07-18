@@ -1,0 +1,1460 @@
+[E4]
+Table=RDM
+BackColor=16777215
+
+[DATE]
+Type=Text
+Prompt=Enter date (YYYY-MM-DD)
+Length=20
+Carry=True
+
+[TIME OF DAY]
+Type=Menu
+Prompt=What time of day is analysis taking place?
+Menu=Morning,Afternoon,Evening
+Length=20
+Carry=True
+
+[SITE]
+Type=Text
+Prompt=Enter site name
+Length=30
+Carry=True
+
+[SQUID]
+Type=Text
+Prompt=ENTER SQUID
+Length=10
+Look up=BoneSquid.MDB SQUID
+
+[MODIFIED_SQUID]
+Type=Text
+Prompt=Enter SQUID modified with decimals for separate specimens
+Length=20
+
+[LEVEL]
+Type=Text
+Prompt=Enter level
+Length=20
+Carry=True
+
+[PLOTTED_OR_SCREENED]
+Type=Menu
+Prompt=Is this specimen piece-plotted or screened (tamis) material?
+Menu=Plotted,Screened
+Length=10
+Carry=True
+
+[BROAD_TAXON]
+Type=Menu
+Prompt=Is this a mammal, tortoise, bird, or fish?
+Menu=Mammal,Tortoise,Bird,Fish,Other,Indeterminate
+Length=20
+Carry=True
+
+[TAXON]
+Type=Menu
+Prompt=Enter taxon
+Menu=ungulate_small_medium,Rangifer_tarandus,Cervus_Rangifer,Cervus_elaphus,mammal_unknown,Equus_sp,Bos_Bison,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,ungulate_small,ungulate_medium_large,ungulate_large,Bos_Bison_Equus,Cervid,Bovid,Elephantid,Sus_scrofa,Crocuta_spelaea,Canis_sp,Vulpes_sp,Leporid,bird_unknown,fish_unknown,unidentified
+Length=30
+
+[ELEMENT_MAMMAL]
+Type=Menu
+Prompt=Choose the bone element
+Menu=Mandible_no_teeth,Maxilla_no_teeth,Alveolar,Tibia,Femur,Humerus,Rib,Rib_indeterminate_fragment,Metacarpal,Metatarsal,Metapodial,Scapula,Ilium,Ischium,Pubis,Innominate,Vert_Thoracic,Vert_Lumbar,Vert_Indeterminate,Vert_Cervical,Vert_Caudal,Atlas,Axis,Radius,Radio-ulna,Ulna,Costal_Cartilage,Phalanx_1,Phalanx_2,Phalanx_3,Calcaneum,Metacarpal_II,Metacarpal_III,Metacarpal_IV,Metatarsal_II,Metatarsal_III,Metatarsal_IV,Astragalus,Naviculo_Cuboid,Navicular,Internal_Cuneiform,External_and_Middle_Cuneiform,Lateral_Malleolus,Ectocuneiform,Cuneiform,Scaphoid,Magnum,Lunate,Unciform,Pisiform,Scapho_Lunar,Trapezoid,Trapezium,External_Cuneiform,Middle_Cuneiform,Navicular,Cuboid,Phalanx_Indeterminate,Sacrum,Sternebrae,Fibula,Patella,Vestigial_Metapodial,Accessory_Phalanx_1,Accessory_Phalanx_2,Accessory_Phalanx_3,Sesamoid,External_Sesamoid,Internal_Sesamoid,Phalangeal_Sesamoid,Antler,Horn,Cranium,Hyoid,Indeterminate,Long_Bone,Short_Bone,Compact,Flat,Coprolite,Non_Id,Mandible_w_teeth,Maxilla_w_teeth
+Length=30
+Condition1=BROAD_TAXON Mammal
+
+[ELEMENT_TORTOISE]
+Type=Menu
+Prompt=Choose the bone element
+Menu=Cranium,Mandible,Hyoid,Atlas,Axis,Vert_Cervical,Vert_Dorsal,Vert_Caudal,Vert_Indeterminate,Sacrum,Innominate,Ilium,Ischium,Pubis,Epipubis,Scapula,Coracoid,Humerus,Radius,Ulna,Femur,Tibia,Fibula,Carpal,Radiale_plus_centrale,Carpalia,Pisiform,Ulnare,Intermedium,Tarsal,Fibulare,Tritibiale,Tarsalia,Metacarpal,Metatarsal,Metapodial,Phalanx,Sesamoid,Indeterminate,Carapace,Nuchal_scute,Nuchal,Neural,Costal,Marginal,Peripheral,Vertebral,Pleural,Pygal,Suprapygal,Plastron,Gular,Epiplastron,Entoplastron,Humeral,Axial_notch,Pectoral,Abdominal,Hyoplastron,Hypoplastron,Femoral,Xiphiplastron,Anal,Eggshell,Compact,Flat,Long_Bone,Short_Bone,Coprolite,Non_Id
+Length=30
+Condition1=BROAD_TAXON Tortoise
+
+[ELEMENT_BIRD]
+Type=Menu
+Prompt=Choose the bone element
+Menu=Long_Bone,Short_Bone,Cranium,Mandible,Hyoid,Atlas,Axis,Vert_Cervical,Vert_Thoracic,Synsacrum,Vert_Caudal,Vert_Indeterminate,Innominate,Ilium,Ischium,Pubis,Rib,Sternum,Scapula,Coracoid,Furculum,Humerus,Radius,Ulna,Cuneiform,Scapholunar,Carpometacarpus,Femur,Fibula,Tibiotarsus,Tarsometatarsus,Patella,Phalanx_1,Phalanx_2,Phalanx_3,Phalanx_4,Phalanx_5,Compact,Flat,Coprolite,Non_Id
+Length=30
+Condition1=BROAD_TAXON Bird
+
+[ELEMENT_FISH]
+Type=Menu
+Prompt=Choose the bone element
+Menu=Vert_Indeterminate,Basioccipital,Parasphenoid,Vomer,Frontal,Dentary,Angular,Maxilla,Premaxilla,Quadrate,Hyomandibular,Ceratohyal,Epihyal,Opercular,Preopercular,Subopercular,Interopercular,Cleithrum,Scapula,Coracoid,Post_temporal,Basipterygium,Atlas,Vert_Thoracic,Vert_Pre_Caudal,Vert_Caudal
+Length=30
+Condition1=BROAD_TAXON Fish
+
+[BONE_SIDE]
+Type=Menu
+Prompt=Enter bone side
+Menu=Indeterminate,Left,Right,Not_Applicable,
+Length=20
+Condition1=ELEMENT_MAMMAL NOT Alveolar,Costal_Cartilage,Incisor,Canine,Premolar,Molar,Indet_incisor,Indet_canine,Indet_premolar,Indet_molar,Decid_incisor,Decid_canine,Decid_premolar,Decid_indet,Associated_teeth,Indet_tooth,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Tooth,Non_Id AND
+Condition3=ELEMENT_BIRD NOT Tooth,Non_Id AND
+Condition4=ELEMENT_FISH NOT Tooth,Non_Id
+
+[MEDIAL_LATERAL]
+Type=Menu
+Prompt=Is this specimen from the medial or lateral portion?
+Menu=Lateral,Medial,Indeterminate,Both,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition2=ELEMENT_TORTOISE Humerus,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition3=ELEMENT_BIRD Humerus,Radius,Ulna,Femur,Carpometacarpus,Tibiotarsus,Tarsometatarsus
+
+[ANTERIOR_POSTERIOR]
+Type=Menu
+Prompt=Is this specimen from the anterior or posterior portion?
+Menu=Anterior,Posterior,Indeterminate,Both,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition2=ELEMENT_TORTOISE Humerus,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition3=ELEMENT_BIRD Humerus,Radius,Ulna,Femur,Carpometacarpus,Tibiotarsus,Tarsometatarsus
+
+[PORTION_LONG_BONE_EPIPHYSIS_PROXIMAL]
+Type=Menu
+Prompt=Describe the long bone proximal epiphysis portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition2=ELEMENT_TORTOISE Humerus,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition3=ELEMENT_BIRD Humerus,Radius,Ulna,Femur,Carpometacarpus,Tibiotarsus,Tarsometatarsus
+
+[PORTION_LONG_BONE_SHAFT_PROXIMAL]
+Type=Menu
+Prompt=Describe the long bone proximal shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition2=ELEMENT_TORTOISE Humerus,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition3=ELEMENT_BIRD Humerus,Radius,Ulna,Femur,Carpometacarpus,Tibiotarsus,Tarsometatarsus
+
+[PORTION_LONG_BONE_SHAFT_MID]
+Type=Menu
+Prompt=Describe the long bone midshaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition2=ELEMENT_TORTOISE Humerus,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition3=ELEMENT_BIRD Humerus,Radius,Ulna,Femur,Carpometacarpus,Tibiotarsus,Tarsometatarsus
+
+[PORTION_LONG_BONE_SHAFT_DISTAL]
+Type=Menu
+Prompt=Describe the long bone distal shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition2=ELEMENT_TORTOISE Humerus,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition3=ELEMENT_BIRD Humerus,Radius,Ulna,Femur,Carpometacarpus,Tibiotarsus,Tarsometatarsus
+
+[PORTION_LONG_BONE_EPIPHYSIS_DISTAL]
+Type=Menu
+Prompt=Describe the long bone distal epiphysis portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition2=ELEMENT_TORTOISE Humerus,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial OR
+Condition3=ELEMENT_BIRD Humerus,Radius,Ulna,Femur,Carpometacarpus,Tibiotarsus,Tarsometatarsus
+
+[PORTION_PHALANX_PROXIMAL]
+Type=Menu
+Prompt=Describe the proximal phalanx portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition2=ELEMENT_TORTOISE Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition3=ELEMENT_BIRD Phalanx_1,Phalanx_2,Phalanx_3,Phalanx_4,Phalanx_5
+
+[PORTION_PHALANX_SHAFT]
+Type=Menu
+Prompt=Describe the phalanx shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition2=ELEMENT_TORTOISE Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition3=ELEMENT_BIRD Phalanx_1,Phalanx_2,Phalanx_3,Phalanx_4,Phalanx_5
+
+[PORTION_PHALANX_DISTAL]
+Type=Menu
+Prompt=Describe the distal phalanx portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition2=ELEMENT_TORTOISE Phalanx_1,Phalanx_2,Phalanx_3 OR
+Condition3=ELEMENT_BIRD Phalanx_1,Phalanx_2,Phalanx_3,Phalanx_4,Phalanx_5
+
+[PORTION_CALCANEUM_ARTICULAR]
+Type=Menu
+Prompt=Describe the calcaneum articular area
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Calcaneum
+
+[PORTION_CALCANEUM_BODY]
+Type=Menu
+Prompt=Describe the calcaneum body
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Calcaneum
+
+[PORTION_CALCANEUM_EPIPHYSIS]
+Type=Menu
+Prompt=Describe the calcaneum epiphysis
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Calcaneum
+
+[PORTION_MANDIBLE_CONDYLE]
+Type=Menu
+Prompt=Describe the mandible condyle portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_RAMUS]
+Type=Menu
+Prompt=Describe the mandible ramus portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_BODY]
+Type=Menu
+Prompt=Describe the mandible body portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_ALVEOLAR]
+Type=Menu
+Prompt=Describe the mandible alveolar portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_SYMPHYSIS]
+Type=Menu
+Prompt=Describe the mandible symphysis portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_SCAPULA_GLENOID]
+Type=Menu
+Prompt=Describe the scapula glenoid fossa portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_CRANIAL]
+Type=Menu
+Prompt=Describe the scapula cranial blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_CAUDAL]
+Type=Menu
+Prompt=Describe the scapula caudal blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_PROXIMAL]
+Type=Menu
+Prompt=Describe the scapula proximal blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_DISTAL]
+Type=Menu
+Prompt=Describe the scapula distal blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_SPINE]
+Type=Menu
+Prompt=Describe the scapula spine portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_RIB_HEAD]
+Type=Menu
+Prompt=Describe the rib head portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_RIB_NECK]
+Type=Menu
+Prompt=Describe the rib neck portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_RIB_SHAFT_PROXIMAL]
+Type=Menu
+Prompt=Describe the rib proximal shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_RIB_SHAFT_DISTAL]
+Type=Menu
+Prompt=Describe the rib distal shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_RIB_DISTAL_ARTICULATION]
+Type=Menu
+Prompt=Describe the rib distal articulation portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_VERTEBRA_CENTRUM]
+Type=Menu
+Prompt=Describe the vertebra centrum portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[PORTION_VERTEBRA_NEURAL_ARCH]
+Type=Menu
+Prompt=Describe the vertebra neural arch portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[PORTION_VERTEBRA_PROCESS_SPINOUS]
+Type=Menu
+Prompt=Describe the vertebra spinous process portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[PORTION_VERTEBRA_PROCESS_TRANSVERSE]
+Type=Menu
+Prompt=Describe the vertebra transverse process portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[FORAMEN]
+Type=Menu
+Prompt=Foramen present?
+Menu=No,Yes
+Length=14
+Condition1=ELEMENT_MAMMAL NOT Rib,Rib_indeterminate_fragment,Costal_Cartilage,Incisor,Canine,Premolar,Molar,Indet_incisor,Indet_canine,Indet_premolar,Indet_molar,Decid_incisor,Decid_canine,Decid_premolar,Decid_indet,Associated_teeth,Indet_tooth,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Tooth,Non_Id AND
+Condition3=ELEMENT_BIRD NOT Tooth,Non_Id AND
+Condition4=ELEMENT_FISH NOT Tooth,Non_Id
+
+[SCAN ZONE 1]
+Type=Menu
+Prompt=Describe bone density scan zone 1
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Scapula,Humerus,Radius,Ulna,Radio-Ulna,Metacarpal,Innominate,Ilium,Ischium,Pubis,Femur,Tibia,Metatarsal,Calcaneum,Astragalus,Phalanx_1,Phalanx_2,Phalanx_3,Mandible_w_teeth,Mandible_no_teeth,Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Sacrum,Rib
+
+[SCAN ZONE 2]
+Type=Menu
+Prompt=Describe bone density scan zone 2
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Scapula,Humerus,Radius,Ulna,Radio-Ulna,Metacarpal,Innominate,Ilium,Ischium,Pubis,Femur,Tibia,Metatarsal,Calcaneum,Astragalus,Phalanx_1,Phalanx_2,Mandible_w_teeth,Mandible_no_teeth,Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Sacrum,Rib
+
+[SCAN ZONE 3]
+Type=Menu
+Prompt=Describe bone density scan zone 3
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Scapula,Humerus,Radius,Ulna,Radio-Ulna,Metacarpal,Innominate,Ilium,Ischium,Pubis,Femur,Tibia,Metatarsal,Calcaneum,Phalanx_1,Mandible_w_teeth,Mandible_no_teeth,Atlas,Axis,Vert_Lumbar,Rib
+
+[SCAN ZONE 4]
+Type=Menu
+Prompt=Describe bone density scan zone 4
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Scapula,Humerus,Radius,Ulna,Radio-Ulna,Metacarpal,Innominate,Ilium,Ischium,Pubis,Femur,Tibia,Metatarsal,Calcaneum,Mandible_w_teeth,Mandible_no_teeth,Rib
+
+[SCAN ZONE 5]
+Type=Menu
+Prompt=Describe bone density scan zone 5
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Scapula,Humerus,Radius,Ulna,Radio-Ulna,Metacarpal,Innominate,Ilium,Ischium,Pubis,Femur,Tibia,Metatarsal,Mandible_w_teeth,Mandible_no_teeth,Rib
+
+[SCAN ZONE 6]
+Type=Menu
+Prompt=Describe bone density scan zone 6
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Radius,Ulna,Radio-Ulna,Metacarpal,Innominate,Ilium,Ischium,Pubis,Femur,Metatarsal,Mandible_w_teeth,Mandible_no_teeth
+
+[SCAN ZONE 7]
+Type=Menu
+Prompt=Describe bone density scan zone 7
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Radius,Ulna,Radio-Ulna,Innominate,Ilium,Ischium,Pubis,Femur,Mandible_w_teeth,Mandible_no_teeth
+
+[SCAN ZONE 8]
+Type=Menu
+Prompt=Describe bone density scan zone 8
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL Mandible_w_teeth,Mandible_no_teeth
+
+[NDE_PRESENT]
+Type=Menu
+Prompt=Are there NDE (number of distinct elements) landmarks present?
+Menu=No,Yes,Not_Applicable
+Length=20
+
+[MCMT_ANT_GROOVE_COMPLETE]
+Type=Menu
+Prompt=Is the MC or MT anterior groove complete?
+Menu=Yes,No,Partial,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Metacarpal,Metatarsal AND
+Condition2=NDE_PRESENT Yes
+
+[NDE_LANDMARK_1]
+Type=Menu
+Prompt=Describe NDE landmark 1 (humerus)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Humerus AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_2]
+Type=Menu
+Prompt=Describe NDE landmark 2 (humerus)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Humerus AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_3]
+Type=Menu
+Prompt=Describe NDE landmark 3 (humerus)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Humerus AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_4]
+Type=Menu
+Prompt=Describe NDE landmark 4 (humerus)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Humerus AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_5]
+Type=Menu
+Prompt=Describe NDE landmark 5 (radius)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radius,Radio-ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_6]
+Type=Menu
+Prompt=Describe NDE landmark 6 (radius)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radius,Radio-ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_7]
+Type=Menu
+Prompt=Describe NDE landmark 7 (radius)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radius,Radio-ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_8]
+Type=Menu
+Prompt=Describe NDE landmark 8 (radius)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radius,Radio-ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_9]
+Type=Menu
+Prompt=Describe NDE landmark 9 (ulna)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radio-ulna,Ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_10]
+Type=Menu
+Prompt=Describe NDE landmark 10 (ulna)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radio-ulna,Ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_11]
+Type=Menu
+Prompt=Describe NDE landmark 11 (ulna)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radio-ulna,Ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_12]
+Type=Menu
+Prompt=Describe NDE landmark 12 (ulna)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Radio-ulna,Ulna AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_13]
+Type=Menu
+Prompt=Describe NDE landmark 13 (metacarpal)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_14]
+Type=Menu
+Prompt=Describe NDE landmark 14 (metacarpal)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_15]
+Type=Menu
+Prompt=Describe NDE landmark 15 (metacarpal)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_16]
+Type=Menu
+Prompt=Describe NDE landmark 16 (metacarpal)
+Menu=0,.5,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_17_comp]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 17 (anterior groove of metacarpal)
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE Yes
+
+[NDE_LANDMARK_17_incomp]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 17 (anterior groove of metacarpal) to be divided by 2
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE No
+
+[NDE_LANDMARK_17_pcompy]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 17 (anterior groove of metacarpal - complete portion)
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE Partial
+
+[NDE_LANDMARK_17_pcompn]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 17 (anterior groove of metacarpal - incomplete portion) to be divided by 2
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metacarpal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE Partial
+
+[NDE_LANDMARK_18]
+Type=Menu
+Prompt=Describe NDE landmark 18 (femur)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Femur AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_19]
+Type=Menu
+Prompt=Describe NDE landmark 19 (femur)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Femur AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_20]
+Type=Menu
+Prompt=Describe NDE landmark 20 (femur)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Femur AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_21]
+Type=Menu
+Prompt=Describe NDE landmark 21 (femur)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Femur AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_22]
+Type=Menu
+Prompt=Describe NDE landmark 22 (tibia)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Tibia AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_23]
+Type=Menu
+Prompt=Describe NDE landmark 23 (tibia)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Tibia AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_24]
+Type=Menu
+Prompt=Describe NDE landmark 24 (tibia)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Tibia AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_25]
+Type=Menu
+Prompt=Describe NDE landmark 25 (tibia)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Tibia AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_26]
+Type=Menu
+Prompt=Describe NDE landmark 26 (metatarsal)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_27]
+Type=Menu
+Prompt=Describe NDE landmark 27 (metatarsal)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_28]
+Type=Menu
+Prompt=Describe NDE landmark 28 (metatarsal)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_29]
+Type=Menu
+Prompt=Describe NDE landmark 29 (metatarsal)
+Menu=0,.5,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_30_comp]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 30 (anterior groove of metatarsal)
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE Yes
+
+[NDE_LANDMARK_30_incomp]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 30 (anterior groove of metatarsal) to be divided by 2
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE No
+
+[NDE_LANDMARK_30_pcompy]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 30 (anterior groove of metatarsal - complete portion)
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE Partial
+
+[NDE_LANDMARK_30_pcompn]
+Type=Instrument
+Prompt=Measure (mm) NDE landmark 30 (anterior groove of metatarsal - incomplete portion) to be divided by 2
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metatarsal AND
+Condition3=NDE_PRESENT Yes AND
+Condition4=MCMT_ANT_GROOVE_COMPLETE Partial
+
+[NDE_LANDMARK_31]
+Type=Menu
+Prompt=Describe NDE landmark 31 (metapodial)
+Menu=0,.5,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Metapodial AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_32]
+Type=Menu
+Prompt=Describe NDE landmark 32 (antler, horn)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Antler,Horn AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_34]
+Type=Menu
+Prompt=Describe NDE landmark 34 (cranium)
+Menu=0,.5,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Cranium AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_36]
+Type=Menu
+Prompt=Describe NDE landmark 36 (mandible)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Mandible,Mandible_no_teeth AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_37]
+Type=Menu
+Prompt=Describe NDE landmark 37 (mandible)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Mandible,Mandible_no_teeth AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_38]
+Type=Menu
+Prompt=Describe NDE landmark 38 (hyoid)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Hyoid AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_39]
+Type=Menu
+Prompt=Describe NDE landmark 39 (hyoid)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Hyoid AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_40]
+Type=Menu
+Prompt=Describe NDE landmark 40 (hyoid)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Hyoid AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_41]
+Type=Menu
+Prompt=Describe the NDE landmark 41 (atlas)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Atlas AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_42]
+Type=Menu
+Prompt=Describe the NDE landmark 42 (atlas)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Atlas AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_43]
+Type=Menu
+Prompt=Describe the NDE landmark 43 (axis)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Axis AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_44]
+Type=Menu
+Prompt=Describe the NDE landmark 44 (axis)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Axis AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_45]
+Type=Menu
+Prompt=Describe the NDE landmark 45 (cervical vertebra)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vert_Cervical AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_46]
+Type=Menu
+Prompt=Describe the NDE landmark 46 (cervical vertebra)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vert_Cervical AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_47]
+Type=Menu
+Prompt=Describe the NDE landmark 47 (thoracic vertebra)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vert_Thoracic AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_48]
+Type=Menu
+Prompt=Describe the NDE landmark 48 (thoracic vertebra)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vert_Thoracic AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_49]
+Type=Menu
+Prompt=Describe the NDE landmark 49 (lumbar vertebra)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vert_Lumbar AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_50]
+Type=Menu
+Prompt=Describe the NDE landmark 50 (lumbar vertebra)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vert_Lumbar AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_51]
+Type=Menu
+Prompt=Describe the NDE landmark 51 (sacrum)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Sacrum AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_52]
+Type=Menu
+Prompt=Describe the NDE landmark 52 (sacrum)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Sacrum AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_53]
+Type=Menu
+Prompt=Describe the NDE landmark 53 (caudal vertebra)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vert_Caudal AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_54]
+Type=Menu
+Prompt=Describe the NDE landmark 54 (rib)
+Menu=1,0
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Rib AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_55]
+Type=Menu
+Prompt=Describe the NDE landmark 55 (rib)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Rib AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_56]
+Type=Menu
+Prompt=Describe the NDE landmark 56 (sternebrae)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Sternebrae AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_57]
+Type=Menu
+Prompt=Describe the NDE landmark 57 (scapula)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Scapula AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_58]
+Type=Menu
+Prompt=Describe the NDE landmark 58 (scapula)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Scapula AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_59]
+Type=Menu
+Prompt=Describe the NDE landmark 59 (scapula)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Scapula AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_60]
+Type=Menu
+Prompt=Describe the NDE landmark 60 (scaphoid)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Scaphoid AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_61]
+Type=Menu
+Prompt=Describe the NDE landmark 61 (lunate)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Lunate AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_62]
+Type=Menu
+Prompt=Describe the NDE landmark 62 (cuneiform)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Cuneiform AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_63]
+Type=Menu
+Prompt=Describe the NDE landmark 63 (pisiform)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Pisiform AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_64a]
+Type=Menu
+Prompt=Describe the NDE landmark 64a (magnum/capitatum)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Magnum AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_64b]
+Type=Menu
+Prompt=Describe the NDE landmark 64b (trapezoid)
+Menu=0,1
+Length=20
+Condition1=TAXON Equus_sp AND
+Condition2=ELEMENT_MAMMAL Trapezoid AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_65]
+Type=Menu
+Prompt=Describe the NDE landmark 65 (unciform)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Unciform AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_66]
+Type=Menu
+Prompt=Describe the NDE landmark 66 (ilium)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Innominate,Ilium AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_67]
+Type=Menu
+Prompt=Describe the NDE landmark 67 (ischium)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Innominate,Ischium AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_68]
+Type=Menu
+Prompt=Describe the NDE landmark 68 (pubis)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Innominate,Pubis AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_69]
+Type=Menu
+Prompt=Describe the NDE landmark 69 (patella)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Patella AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_70]
+Type=Menu
+Prompt=Describe the NDE landmark 70 (patella)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Patella AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_71]
+Type=Menu
+Prompt=Describe the NDE landmark 71 (lateral malleolus or fibula)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Lateral_Malleolus,Fibula AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_72]
+Type=Menu
+Prompt=Describe the NDE landmark 72 (astragalus)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Astragalus AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_73]
+Type=Menu
+Prompt=Describe the NDE landmark 73 (astragalus)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Astragalus AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_74]
+Type=Menu
+Prompt=Describe the NDE landmark 74 (calcaneum)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Calcaneum AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_75]
+Type=Menu
+Prompt=Describe the NDE landmark 75 (calcaneum)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Calcaneum AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_76]
+Type=Menu
+Prompt=Describe the NDE landmark 76 (calcaneum)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Calcaneum AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_77a]
+Type=Menu
+Prompt=Describe the NDE landmark 77a (cuboid, naviculo-cuboid)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Cuboid,Naviculo_Cuboid AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_77b]
+Type=Menu
+Prompt=Describe the NDE landmark 77b (navicular)
+Menu=0,1
+Length=20
+Condition1=TAXON Equus_sp AND
+Condition2=ELEMENT_MAMMAL Navicular AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_78]
+Type=Menu
+Prompt=Describe the NDE landmark 78 (internal cuneiform)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Internal_Cuneiform AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_79]
+Type=Menu
+Prompt=Describe the NDE landmark 79 (external and middle cuneiform)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL External_and_Middle_Cuneiform AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_80]
+Type=Menu
+Prompt=Describe the NDE landmark 80 (1st phalanx)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Phalanx_1 AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_81]
+Type=Menu
+Prompt=Describe the NDE landmark 81 (2nd phalanx)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Phalanx_2 AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_82]
+Type=Menu
+Prompt=Describe the NDE landmark 82 (3rd phalanx)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Phalanx_3 AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_83]
+Type=Menu
+Prompt=Describe the NDE landmark 83 (1st accessory phalanx)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Accessory_Phalanx_1 AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_84]
+Type=Menu
+Prompt=Describe the NDE landmark 84 (2nd accessory phalanx)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Accessory_Phalanx_2 AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_85]
+Type=Menu
+Prompt=Describe the NDE landmark 85 (3rd accessory phalanx)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Accessory_Phalanx_3 AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_86]
+Type=Menu
+Prompt=Describe the NDE landmark 86 (vestigial metapodial)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Vestigial_Metapodial AND
+Condition3=NDE_PRESENT Yes
+
+[NDE_LANDMARK_87]
+Type=Menu
+Prompt=Describe the NDE landmark 87 (sesamoid)
+Menu=0,1
+Length=20
+Condition1=TAXON Rangifer_tarandus,Cervus_elaphus,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,Bos_Bison,Equus_sp,Bos_Bison_Equus,Cervus_Rangifer,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Cervid,Bovid AND
+Condition2=ELEMENT_MAMMAL Sesamoid AND
+Condition3=NDE_PRESENT Yes
+
+[FUSION]
+Type=Menu
+Prompt=Describe epiphyseal fusion
+Menu=Not_Applicable,Fused,Incomplete_Fusion,Unfused,Indeterminate
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2,Calcaneum,Innominate,Ilium,Ischium,Pubis,Scapula
+
+[SHAFT LENGTH%]
+Type=Menu
+Prompt=enter the percentage of the length of the shaft
+Menu= <25%,25-50%,50-75%,>75%,Complete,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2
+
+[SHAFT CIRCUMFERENCE%]
+Type=Menu
+Prompt=enter the percentage of the circumference of the shaft
+Menu= <50%,>50%,Complete,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2
+
+[READABILITY]
+Type=Menu
+Prompt=What percentage of the surface is readable?
+Menu=100%,>50%,<50%,0%,Not_Applicable
+Length=20
+Condition1=PLOTTED_OR_SCREENED Plotted
+ 
+[WEATHERING]
+Type=Menu
+Prompt=What weathering stage is this bone in?
+Menu=0,1,2,3,4,5,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Non_Id AND
+Condition3=ELEMENT_BIRD NOT Non_Id AND
+Condition4=ELEMENT_FISH NOT Non_Id
+
+[DENDRITIC ETCHING]
+Type=Menu
+Prompt=What percent of bone has dendritic etching?
+Menu=0,<50%,>50%,100%,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Non_Id AND
+Condition3=ELEMENT_BIRD NOT Non_Id AND
+Condition4=ELEMENT_FISH NOT Non_Id
+
+[GASTRIC ETCHING]
+Type=Menu
+Prompt=Is gastric etching visible anywhere on the bone?
+Menu=No,Yes,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Non_Id AND
+Condition3=ELEMENT_BIRD NOT Non_Id AND
+Condition4=ELEMENT_FISH NOT Non_Id
+
+[SMOOTHING]
+Type=Menu
+Prompt=What percent of bone has smoothing?
+Menu=0,<50%,>50%,100,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Non_Id AND
+Condition3=ELEMENT_BIRD NOT Non_Id AND
+Condition4=ELEMENT_FISH NOT Non_Id
+
+[BREAK 1]
+Type=Menu
+Prompt=Describe break 1
+Menu=Fresh,Dry,Recent,Mixed,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2,Mandible_no_teeth
+
+[BREAK 2]
+Type=Menu
+Prompt=Describe break 2
+Menu=Fresh,Dry,Recent,Mixed,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2,Mandible_no_teeth
+
+[BURNING]
+Type=Menu
+Prompt=How severe is the burning?
+Menu=0_Not_burned_cream_tan,1_Slightly_burned_localized_and_less_than_half_carbonized,2_Lightly_burned_more_than_half_carbonized,3_Fully_carbonized_completely_black,4_Localized_less_than_half_calcined_more_black_than_white,5_greater_than_half_calcined_more_white_than_black,6_Fully_calcined_completely_white
+Length=57
+
+[BUTCHERY_MARKS_PRESENT]
+Type=Menu
+Prompt=Are any butchery marks present?
+Menu=No,Yes
+Length=10
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Non_Id AND
+Condition3=ELEMENT_BIRD NOT Non_Id AND
+Condition4=ELEMENT_FISH NOT Non_Id
+
+[CUT_MARKS]
+Type=Menu
+Prompt=Cut marks present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[SCRAPING]
+Type=Menu
+Prompt=Scraping present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[ANVIL_MARKS]
+Type=Menu
+Prompt=Anvil marks present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[PERCUSSION_NOTCHES]
+Type=Menu
+Prompt=Percussion notches present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[NON_ANTHRO_MARKS_PRESENT]
+Type=Menu
+Prompt=Are any non-anthropogenic marks present?
+Menu=No,Yes
+Length=10
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Non_Id AND
+Condition3=ELEMENT_BIRD NOT Non_Id AND
+Condition4=ELEMENT_FISH NOT Non_Id
+
+[CARNIVORE_TOOTH_PITS]
+Type=Menu
+Prompt=Carnivore tooth pits present?
+Menu=No,Yes,Not_Applicable
+Length=20
+Condition1=NON_ANTHRO_MARKS_PRESENT Yes
+
+[CARNIVORE_TOOTH_SCALLOPING]
+Type=Menu
+Prompt=Carnivore tooth scalloping present?
+Menu=No,Yes,Not_Applicable
+Length=20
+Condition1=NON_ANTHRO_MARKS_PRESENT Yes
+
+[RODENT_TOOTH_MARKS]
+Type=Menu
+Prompt=Rodent tooth marks present?
+Menu=No,Yes,Not_Applicable
+Length=20
+Condition1=NON_ANTHRO_MARKS_PRESENT Yes
+
+[RETOUCHOIR]
+Type=Menu
+Prompt=Retouchoir?
+Menu=No,Yes,Not_Applicable
+Length=14
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Incisor,Canine,Premolar,Molar,Indet_incisor,Indet_canine,Indet_premolar,Indet_molar,Decid_incisor,Decid_canine,Decid_premolar,Decid_indet,Associated_teeth,Indet_tooth,Indeterminate,Coprolite,Non_Id AND
+Condition2=ELEMENT_TORTOISE NOT Non_Id AND
+Condition3=ELEMENT_BIRD NOT Non_Id AND
+Condition4=ELEMENT_FISH NOT Non_Id
+
+[BONE_COMMENTS]
+Type=Text
+Prompt=Anything special about the bone?
+Length=200
+Condition1=ELEMENT_MAMMAL NOT Incisor,Canine,Premolar,Molar,Indet_incisor,Indet_canine,Indet_premolar,Indet_molar,Decid_incisor,Decid_canine,Decid_premolar,Decid_indet,Associated_teeth,Indet_tooth
+
+[PHOTO]
+Type=Menu
+Prompt=Photo of specimen?
+Menu=Not_needed,Needed,Done
+Length=20
+
+[PHOTO_INFO]
+Type=Text
+Prompt=Enter photo information (e.g., photo number, other identifier, etc.)
+Length=50
+Condition1=PHOTO Done
+
+[EXTERNAL_ANALYSIS]
+Type=Text
+Prompt=Status of specimen if taken for external analysis (e.g., isotope, dental cementum, ZooMS)
+Length=200
+
+[C14]
+Type=Text
+Prompt=Status of specimen if taken for C14 dating
+Length=200
