@@ -1,0 +1,123 @@
+[E4]
+Table=RDM OSTEO
+BackColor=16777215
+
+[DATE]
+Type=Text
+Prompt=Enter date (YYYY-MM-DD)
+Length=20
+Carry=True
+
+[TIME OF DAY]
+Type=Menu
+Prompt=What time of day is analysis taking place?
+Menu=Morning,Afternoon,Evening
+Length=20
+Carry=True
+
+[SITE]
+Type=Text
+Prompt=Enter site name
+Length=30
+Carry=True
+
+[SQUID]
+Type=Text
+Prompt=ENTER SQUID
+Length=10
+Look up=BoneSquid.MDB SQUID
+
+[MODIFIED_SQUID]
+Type=Text
+Prompt=Enter SQUID modified with decimals for separate specimens
+Length=20
+
+[LEVEL]
+Type=Text
+Prompt=Enter level
+Length=20
+Carry=True
+
+[PLOTTED_OR_SCREENED]
+Type=Menu
+Prompt=Is this specimen piece-plotted or screened (tamis) material?
+Menu=Plotted,Screened
+Length=10
+Carry=True
+
+[TAXON]
+Type=Menu
+Prompt=Enter taxon
+Menu=Rangifer_tarandus,ungulate_small_medium,Cervus_Rangifer,Cervus_elaphus,Equus_sp,Bos_Bison,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,ungulate_small,ungulate_medium_large,ungulate_large,Bos_Bison_Equus,Cervid,Bovid,Elephantid,Sus_scrofa,Crocuta_spelaea,Canis_sp,Vulpes_sp,Leporid,mammal_unknown,bird_unknown,fish_unknown,unidentified
+Length=30
+
+[ELEMENT_MAMMAL]
+Type=Menu
+Prompt=Choose the bone element
+Menu=Tibia,Humerus,Femur,Rib,Vert_Thoracic,Vert_Lumbar,Vert_Cervical,Atlas,Axis,Vert_Caudal,Vert_Indeterminate,Innominate,Scapula,Phalanx_3,Phalanx_1,Phalanx_2,Calcaneum,Naviculo_Cuboid,Navicular,Internal_Cuneiform,External_and_Middle_Cuneiform,Lateral_Malleolus,Ectocuneiform,Cuneiform,Scaphoid,Magnum,Lunate,Unciform,Pisiform,Astragalus,Metacarpal,Radio-ulna,Radius,Ulna,Costal_Cartilage,Metatarsal,Rib_indeterminate_fragment,Metapodial,Metacarpal_II,Metacarpal_III,Metacarpal_IV,Metatarsal_II,Metatarsal_III,Metatarsal_IV,Phalanx_Indeterminate,Mandible_no_teeth,Maxilla_no_teeth,Sacrum,Ilium,Ischium,Pubis,Sternebrae,Fibula,Patella,Vestigial_Metapodial,Accessory_Phalanx_1,Accessory_Phalanx_2,Accessory_Phalanx_3,Sesamoid,External_Sesamoid,Internal_Sesamoid,Phalangeal_Sesamoid,Antler,Horn,Cranium,Hyoid,Indeterminate,Long_Bone,Short_Bone,Compact,Flat,Coprolite,Non_Id,Mandible_w_teeth,Maxilla_w_teeth
+Length=30
+
+[BONE_SIDE]
+Type=Menu
+Prompt=Enter bone side
+Menu=Right,Left,Indeterminate,Not_Applicable,
+Length=20
+
+[PROXIMAL_DISTAL]
+Type=Menu
+Prompt=Is the specimen from the proximal or distal end?
+Menu=Distal,Proximal,Both,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radio-ulna,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Metacarpal_II,Metacarpal_III,Metacarpal_IV,Metatarsal_II,Metatarsal_III,Metatarsal_IV,Phalanx_1,Phalanx_2,Phalanx_3
+
+[FUSION_STAGE_OR_FETAL]
+Type=Menu
+Prompt=Enter epiphyseal fusion stage or fetal
+Menu=Fused,Incomplete_Fusion,Unfused,Fetal,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radio-ulna,Radius,Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Metacarpal_II,Metacarpal_III,Metacarpal_IV,Metatarsal_II,Metatarsal_III,Metatarsal_IV,Phalanx_1,Phalanx_2,Phalanx_3
+
+[PROXIMAL_BREADTH]
+Type=Instrument
+Prompt=Enter proximal breadth measurement (mm)
+Length=20
+Condition1=PROXIMAL_DISTAL Proximal,Both AND
+Condition2=FUSION_STAGE_OR_FETAL Fused,Incomplete_Fusion,Unfused
+
+[PROXIMAL_DEPTH]
+Type=Instrument
+Prompt=Enter proximal depth measurement (mm)
+Length=20
+Condition1=PROXIMAL_DISTAL Proximal,Both AND
+Condition2=FUSION_STAGE_OR_FETAL Fused,Incomplete_Fusion,Unfused
+
+[DISTAL_BREADTH]
+Type=Instrument
+Prompt=Enter distal breadth measurement (mm)
+Length=20
+Condition1=PROXIMAL_DISTAL Distal,Both AND
+Condition2=FUSION_STAGE_OR_FETAL Fused,Incomplete_Fusion,Unfused
+
+[DISTAL_DEPTH]
+Type=Instrument
+Prompt=Enter distal depth measurement (mm)
+Length=20
+Condition1=PROXIMAL_DISTAL Distal,Both AND
+Condition2=FUSION_STAGE_OR_FETAL Fused,Incomplete_Fusion,Unfused
+
+[DIAPHYSIS_LENGTH]
+Type=Instrument
+Prompt=Enter diaphysis length measurement (mm)
+Length=20
+Condition1=FUSION_STAGE_OR_FETAL Fetal
+
+[ANTLER_BASE]
+Type=Instrument
+Prompt=Enter antler base measurement (mm)
+Length=20
+Condition1=ELEMENT_MAMMAL Antler
+
+[OSTEO_COMMENTS]
+Type=Text
+Prompt=Anything special about the bone?
+Length=200

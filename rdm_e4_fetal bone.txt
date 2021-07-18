@@ -1,0 +1,387 @@
+[E4]
+Table=RDM Fetal Bone
+BackColor=16777215
+
+[DATE]
+Type=Text
+Prompt=Enter date (YYYY-MM-DD)
+Length=20
+Carry=True
+
+[TIME OF DAY]
+Type=Menu
+Prompt=What time of day is analysis taking place?
+Menu=Morning,Afternoon,Evening
+Length=20
+Carry=True
+
+[SITE]
+Type=Text
+Prompt=Enter site name
+Length=30
+Carry=True
+
+[SQUID]
+Type=Text
+Prompt=ENTER SQUID
+Length=10
+Look up=BoneSquid.MDB SQUID
+
+[MODIFIED_SQUID]
+Type=Text
+Prompt=Enter SQUID modified with decimals for separate specimens
+Length=20
+
+[LEVEL]
+Type=Text
+Prompt=Enter level
+Length=20
+Carry=True
+
+[PLOTTED_OR_SCREENED]
+Type=Menu
+Prompt=Is this specimen piece-plotted or screened (tamis) material?
+Menu=Plotted,Screened
+Length=10
+Carry=True
+
+[TAXON]
+Type=Menu
+Prompt=Enter taxon
+Menu=ungulate_small_medium,Rangifer_tarandus,Cervus_Rangifer,Cervus_elaphus,Equus_sp,Bos_Bison,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,ungulate_small,ungulate_medium_large,ungulate_large,Bos_Bison_Equus,Cervid,Bovid,Elephantid,Sus_scrofa,Crocuta_spelaea,Canis_sp,Vulpes_sp,Leporid,mammal_unknown,bird_unknown,fish_unknown,unidentified
+Length=30
+
+[ELEMENT_MAMMAL]
+Type=Menu
+Prompt=Choose the bone element
+Menu=Humerus,Radio-ulna,Radius,Ulna,Femur,Tibia,Metapodial,Metacarpal,Metatarsal,Metapodial,Scapula,Innominate,Ilium,Ischium,Pubis,Rib_indeterminate_fragment,Costal_Cartilage,Rib,Vert_Indeterminate,Vert_Thoracic,Vert_Lumbar,Vert_Cervical,Vert_Caudal,Atlas,Axis,Phalanx_1,Phalanx_2,Phalanx_3,Calcaneum,Rib_indeterminate_fragment,Metacarpal_II,Metacarpal_III,Metacarpal_IV,Metatarsal_II,Metatarsal_III,Metatarsal_IV,Astragalus,Naviculo_Cuboid,Navicular,Internal_Cuneiform,External_and_Middle_Cuneiform,Lateral_Malleolus,Ectocuneiform,Cuneiform,Scaphoid,Magnum,Lunate,Unciform,Pisiform,Scapho_Lunar,Trapezoid,Trapezium,External_Cuneiform,Middle_Cuneiform,Navicular,Cuboid,Phalanx_Indeterminate,Mandible_no_teeth,Maxilla_no_teeth,Alveolar,Sacrum,Sternebrae,Fibula,Patella,Vestigial_Metapodial,Accessory_Phalanx_1,Accessory_Phalanx_2,Accessory_Phalanx_3,Sesamoid,External_Sesamoid,Internal_Sesamoid,Phalangeal_Sesamoid,Antler,Horn,Cranium,Hyoid,Indeterminate,Long_Bone,Short_Bone,Compact,Flat,Coprolite,Non_Id,Mandible_w_teeth,Maxilla_w_teeth
+Length=30
+
+[BONE_SIDE]
+Type=Menu
+Prompt=Enter bone side
+Menu=Left,Right,Indeterminate,Not_Applicable,
+Length=20
+
+[MEDIAL_LATERAL]
+Type=Menu
+Prompt=Is this specimen from the medial or lateral portion?
+Menu=Both,Lateral,Medial,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2,Phalanx_3
+
+[ANTERIOR_POSTERIOR]
+Type=Menu
+Prompt=Is this specimen from the anterior or posterior portion?
+Menu=Both,Posterior,Anterior,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2,Phalanx_3
+
+[PORTION_LONG_BONE_SHAFT_PROXIMAL]
+Type=Menu
+Prompt=Describe the long bone proximal shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial
+
+[PORTION_LONG_BONE_SHAFT_MID]
+Type=Menu
+Prompt=Describe the long bone midshaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial
+
+[PORTION_LONG_BONE_SHAFT_DISTAL]
+Type=Menu
+Prompt=Describe the long bone distal shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial
+
+[PORTION_CALCANEUM_ARTICULAR]
+Type=Menu
+Prompt=Describe the calcaneum articular area
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Calcaneum
+
+[PORTION_CALCANEUM_BODY]
+Type=Menu
+Prompt=Describe the calcaneum body
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Calcaneum
+
+[PORTION_MANDIBLE_CONDYLE]
+Type=Menu
+Prompt=Describe the mandible condyle portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_RAMUS]
+Type=Menu
+Prompt=Describe the mandible ramus portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_BODY]
+Type=Menu
+Prompt=Describe the mandible body portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_ALVEOLAR]
+Type=Menu
+Prompt=Describe the mandible alveolar portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_MANDIBLE_SYMPHYSIS]
+Type=Menu
+Prompt=Describe the mandible symphysis portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Mandible_no_teeth,Mandible_w_teeth
+
+[PORTION_SCAPULA_GLENOID]
+Type=Menu
+Prompt=Describe the scapula glenoid fossa portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_CRANIAL]
+Type=Menu
+Prompt=Describe the scapula cranial blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_CAUDAL]
+Type=Menu
+Prompt=Describe the scapula caudal blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_PROXIMAL]
+Type=Menu
+Prompt=Describe the scapula proximal blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_BLADE_DISTAL]
+Type=Menu
+Prompt=Describe the scapula distal blade portion
+Menu=Absent,Present,Indeterminate,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_SCAPULA_SPINE]
+Type=Menu
+Prompt=Describe the scapula spine portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Scapula
+
+[PORTION_RIB_NECK]
+Type=Menu
+Prompt=Describe the rib neck portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_RIB_SHAFT_PROXIMAL]
+Type=Menu
+Prompt=Describe the rib proximal shaft portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_RIB_SHAFT_DISTAL]
+Type=Menu
+Prompt=Describe the rib distal shaft portion
+Menu=Present,Absent,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_RIB_DISTAL_ARTICULATION]
+Type=Menu
+Prompt=Describe the rib distal articulation portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Rib
+
+[PORTION_VERTEBRA_CENTRUM]
+Type=Menu
+Prompt=Describe the vertebra centrum portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[PORTION_VERTEBRA_NEURAL_ARCH]
+Type=Menu
+Prompt=Describe the vertebra neural arch portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[PORTION_VERTEBRA_PROCESS_SPINOUS]
+Type=Menu
+Prompt=Describe the vertebra spinous process portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[PORTION_VERTEBRA_PROCESS_TRANSVERSE]
+Type=Menu
+Prompt=Describe the vertebra transverse process portion
+Menu=Absent,Present,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Atlas,Axis,Vert_Cervical,Vert_Thoracic,Vert_Lumbar,Vert_Caudal,Vert_Indeterminate
+
+[FORAMEN]
+Type=Menu
+Prompt=Foramen present?
+Menu=No,Yes
+Length=14
+Condition1=ELEMENT_MAMMAL NOT Rib,Rib_indeterminate_fragment,Costal_Cartilage,Incisor,Canine,Premolar,Molar,Indet_incisor,Indet_canine,Indet_premolar,Indet_molar,Decid_incisor,Decid_canine,Decid_premolar,Decid_indet,Associated_teeth,Indet_tooth,Indeterminate,Coprolite,Non_Id
+
+[SHAFT LENGTH%]
+Type=Menu
+Prompt=enter the percentage of the length of the shaft
+Menu= <25%,25-50%,50-75%,>75%,Complete,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2
+
+[SHAFT CIRCUMFERENCE%]
+Type=Menu
+Prompt=enter the percentage of the circumference of the shaft
+Menu= <50%,>50%,Complete,Not_Applicable
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial,Phalanx_1,Phalanx_2
+
+[BURNING]
+Type=Menu
+Prompt=How severe is the burning?
+Menu=0_Not_burned_cream_tan,1_Slightly_burned_localized_and_less_than_half_carbonized,2_Lightly_burned_more_than_half_carbonized,3_Fully_carbonized_completely_black,4_Localized_less_than_half_calcined_more_black_than_white,5_greater_than_half_calcined_more_white_than_black,6_Fully_calcined_completely_white
+Length=57
+
+[BUTCHERY_MARKS_PRESENT]
+Type=Menu
+Prompt=Are any butchery marks present?
+Menu=No,Yes
+Length=10
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id
+
+[CUT_MARKS]
+Type=Menu
+Prompt=Cut marks present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[SCRAPING]
+Type=Menu
+Prompt=Scraping present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[ANVIL_MARKS]
+Type=Menu
+Prompt=Anvil marks present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[PERCUSSION_NOTCHES]
+Type=Menu
+Prompt=Percussion notches present?
+Menu=No,Yes
+Length=20
+Condition1=BUTCHERY_MARKS_PRESENT Yes
+
+[NON_ANTHRO_MARKS_PRESENT]
+Type=Menu
+Prompt=Are any non-anthropogenic marks present?
+Menu=No,Yes
+Length=10
+Condition1=ELEMENT_MAMMAL NOT Costal_Cartilage,Indeterminate,Coprolite,Non_Id
+
+[CARNIVORE_TOOTH_PITS]
+Type=Menu
+Prompt=Carnivore tooth pits present?
+Menu=No,Yes,Not_Applicable
+Length=20
+Condition1=NON_ANTHRO_MARKS_PRESENT Yes
+
+[CARNIVORE_TOOTH_SCALLOPING]
+Type=Menu
+Prompt=Carnivore tooth scalloping present?
+Menu=No,Yes,Not_Applicable
+Length=20
+Condition1=NON_ANTHRO_MARKS_PRESENT Yes
+
+[RODENT_TOOTH_MARKS]
+Type=Menu
+Prompt=Rodent tooth marks present?
+Menu=No,Yes,Not_Applicable
+Length=20
+Condition1=NON_ANTHRO_MARKS_PRESENT Yes
+
+[DIAPHYSIS_LENGTH]
+Type=Instrument
+Prompt=Enter diaphysis length measurement (mm)
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial
+
+[PROXIMAL_BREADTH]
+Type=Instrument
+Prompt=Enter proximal breadth measurement (mm)
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial AND
+Condition2=PORTION_LONG_BONE_SHAFT_PROXIMAL Present
+
+[PROXIMAL_DEPTH]
+Type=Instrument
+Prompt=Enter proximal depth measurement (mm)
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial AND
+Condition2=PORTION_LONG_BONE_SHAFT_PROXIMAL Present
+
+[DISTAL_BREADTH]
+Type=Instrument
+Prompt=Enter distal breadth measurement (mm)
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial AND
+Condition2=PORTION_LONG_BONE_SHAFT_DISTAL Present
+
+[DISTAL_DEPTH]
+Type=Instrument
+Prompt=Enter distal depth measurement (mm)
+Length=20
+Condition1=ELEMENT_MAMMAL Humerus,Radius,Ulna,Radio-Ulna,Femur,Tibia,Metacarpal,Metatarsal,Metapodial AND
+Condition2=PORTION_LONG_BONE_SHAFT_DISTAL Present
+
+[BONE_COMMENTS]
+Type=Text
+Prompt=Anything special about the bone?
+Length=200
+
+[PHOTO]
+Type=Menu
+Prompt=Photo of specimen?
+Menu=Needed,Not_needed,Done
+Length=20
+
+[PHOTO_INFO]
+Type=Text
+Prompt=Enter photo information (e.g., photo number, other identifier, etc.)
+Length=50
+Condition1=PHOTO Done

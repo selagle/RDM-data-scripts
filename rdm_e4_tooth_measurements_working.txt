@@ -1,0 +1,100 @@
+[E4]
+Table=Roc de Marsal Tooth Measurements
+BackColor=16777215
+ 
+[DATE]
+Type=Text
+Prompt=Enter date (YYYY-MM-DD)
+Length=20
+Carry=True
+ 
+[TIME OF DAY]
+Type=Menu
+Prompt=What time of day is analysis taking place?
+Menu=Morning,Afternoon,Evening
+Length=20
+Carry=True
+ 
+[SITE]
+Type=Text
+Prompt=Enter site name
+Length=30
+Carry=True
+ 
+[SQUID]
+Type=Text
+Prompt=ENTER SQUID
+Length=10
+Look up=BoneSquid.MDB SQUID
+ 
+[LEVEL]
+Type=Text
+Prompt=Enter level
+Length=20
+Carry=True
+ 
+[PLOTTED_OR_SCREENED]
+Type=Menu
+Prompt=Is this specimen piece-plotted or screened (tamis) material?
+Menu=Plotted,Screened
+Length=10
+Carry=True
+ 
+[TAXON]
+Type=Menu
+Prompt=Enter taxon
+Menu=Rangifer_tarandus,Cervus_Rangifer,Cervus_elaphus,Equus_sp,Bos_Bison,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Bos_Bison_Equus,Elephantid,Sus_scrofa,Crocuta_spelaea,Canis_sp,Vulpes_sp,Leporid,mammal_unknown,bird_unknown,fish_unknown,unidentified
+Length=30
+ 
+[TOOTH]
+Type=Menu
+Prompt=Enter tooth type
+Menu=dP4,P4,M1,M2,M3,M1/M2,M,P3,P3/P4,P,C,I1,I2,I3,I4,I
+Length=10
+ 
+[SIDE]
+Type=Menu
+Prompt=Which side is the tooth from?
+Menu=Left,Right
+Length=10
+ 
+[MAXILLA_MANDIBLE]
+Type=Menu
+Prompt=Is this tooth from maxilla or mandible?
+Menu=Mandible,Maxilla
+Length=10
+ 
+[CROWN_HEIGHT_1]
+Type=Text
+Prompt=Measure the crown height of the first lobe:
+Length=10
+ 
+[CROWN_HEIGHT_2]
+Type=Text
+Prompt=Measure the crown height of the second lobe:
+Length=10
+ 
+[CROWN_BREADTH_1]
+Type=Text
+Prompt=Measure the crown breadth of the first lobe:
+Length=10
+ 
+[CROWN_BREADTH_2]
+Type=Text
+Prompt=Measure the crown breadth of the second lobe:
+Length=10
+ 
+[OCCLUSAL_LENGTH]
+Type=Text
+Prompt=Measure the occlusal length:
+Length=10
+ 
+[BASAL_LENGTH]
+Type=Text
+Prompt=Measure the basal length:
+Length=10
+ 
+[COMMENTS_TOOTH_MEASUREMENTS]
+Type=Text
+Prompt=Anything special about the tooth regarding measurements?
+Length=200

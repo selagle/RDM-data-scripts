@@ -1,0 +1,133 @@
+[E4]
+Table=RDM Tooth General Data
+BackColor=16777215
+ 
+[DATE]
+Type=Text
+Prompt=Enter date (YYYY-MM-DD)
+Length=20
+Carry=True
+ 
+[TIME OF DAY]
+Type=Menu
+Prompt=What time of day is analysis taking place?
+Menu=Morning,Afternoon,Evening
+Length=20
+Carry=True
+ 
+[SITE]
+Type=Text
+Prompt=Enter site name
+Length=30
+Carry=True
+ 
+[SQUID]
+Type=Text
+Prompt=Enter SQUID
+Length=10
+Look up=BoneSquid.MDB SQUID
+ 
+[MODIFIED_SQUID]
+Type=Text
+Prompt=Enter SQUID modified with decimals for separate specimens
+Length=20
+ 
+[LEVEL]
+Type=Text
+Prompt=Enter level
+Length=20
+Carry=True
+ 
+[PLOTTED_OR_SCREENED]
+Type=Menu
+Prompt=Is this specimen piece-plotted or screened (tamis) material?
+Menu=Plotted,Screened
+Length=10
+Carry=True
+ 
+[TAXON]
+Type=Menu
+Prompt=Enter taxon
+Menu=Equus_sp,Rangifer_tarandus,Cervus_elaphus,Bos_Bison,Cervus_Rangifer,Capreolus_capreolus,Rupicapra_rupicapra,Capra_ibex,ungulate_small,ungulate_small_medium,ungulate_medium_large,ungulate_large,Bos_Bison_Equus,Elephantid,Sus_scrofa,Crocuta_spelaea,Canis_sp,Vulpes_sp,Leporid,mammal_unknown,bird_unknown,fish_unknown,unidentified
+Length=30
+ 
+[TOOTH]
+Type=Menu
+Prompt=Enter tooth type
+Menu=P/M,dP2,dP3,dP4,dP2/dP3,dP3/dP4,dP,P2,P3,P4,P3/P4,P,M1,M2,M3,M1/M2,M,C,I1,I2,I3,I4,I1/I2,I2/I3,I,dI1,dI2,dI3,indeterminate_enamel_fragment,indeterminate_root_fragment
+Length=29
+ 
+[SIDE]
+Type=Menu
+Prompt=Which side is the tooth from?
+Menu=Left,Right,Indeterminate
+Length=13
+Condition1=TOOTH NOT indeterminate_enamel_fragment,indeterminate_root_fragment
+ 
+[MAXILLA_MANDIBLE]
+Type=Menu
+Prompt=Is this tooth from maxilla or mandible?
+Menu=Mandible,Maxilla,Indeterminate
+Length=13
+Condition1=TOOTH NOT indeterminate_enamel_fragment,indeterminate_root_fragment
+ 
+[PORTION_COMPLETE]
+Type=Menu
+Prompt=Is the tooth complete?
+Menu=Yes,No
+Length=10
+Condition1=TOOTH NOT indeterminate_enamel_fragment,indeterminate_root_fragment
+ 
+[PORTION_CROWN]
+Type=Menu
+Prompt=Is the crown present?
+Menu=Yes,No
+Length=10
+Condition1=PORTION_COMPLETE No
+ 
+[PORTION_ROOT]
+Type=Menu
+Prompt=Is the root present?
+Menu=Yes,No
+Length=10
+Condition1=PORTION_COMPLETE No
+ 
+[ERUPTION_AND_WEAR]
+Type=Menu
+Prompt=Describe tooth eruption/wear
+Menu=Not_Applicable,E1,E2,E3,E4,E5,UW,VEW,LW,MW,HW,VHW,Indeterminate
+Length=20
+Condition1=TOOTH dP4,P4,P3/P4,M1,M2,M3,M1/M2,M AND
+Condition2=MAXILLA_MANDIBLE Mandible
+ 
+[NDE_LANDMARK_33]
+Type=Menu
+Prompt=Describe NDE landmark 33 (cranium)
+Menu=0,.5,1,Not_Applicable
+Length=20
+Condition1=TOOTH dP4,M3 AND
+Condition2=MAXILLA_MANDIBLE Maxilla
+ 
+[NDE_LANDMARK_35]
+Type=Menu
+Prompt=Describe NDE landmark 35 (mandible)
+Menu=0,.5,1,Not_Applicable
+Length=20
+Condition1=TOOTH dP4,M3 AND
+Condition2=MAXILLA_MANDIBLE Mandible
+ 
+[BURNING]
+Type=Menu
+Prompt=How severe is the burning?
+Menu=0_Not_burned_cream_tan,1_Slightly_burned_localized_and_less_than_half_carbonized,2_Lightly_burned_more_than_half_carbonized,3_Fully_carbonized_completely_black,4_Localized_less_than_half_calcined_more_black_than_white,5_greater_than_half_calcined_more_white_than_black,6_Fully_calcined_completely_white
+Length=57
+ 
+[EXTERNAL_ANALYSIS]
+Type=Text
+Prompt=Status of specimen if taken for external analysis (e.g., isotope, dental cementum, ZooMS)
+Length=200
+ 
+[TOOTH_COMMENTS]
+Type=Text
+Prompt=Anything special about the tooth?
+Length=200
